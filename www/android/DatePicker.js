@@ -23,12 +23,17 @@ DatePicker.prototype.show = function(options, cb) {
 					   (options.date.getMinutes());
 	}
 
+	if (options.is24HourView) {
+			options.is24HourView = options.is24HourView;
+	}
+
 	var defaults = {
 		mode : 'date',
 		date : '',
 		minDate: 0,
 		maxDate: 0,
 		clearText: 'Clear'
+		is24HourView: false
 	};
 
 	for (var key in defaults) {
