@@ -1,6 +1,8 @@
 On this fork, the time and date pickers on Android uses the default theme of the device.
 Test on Android 4.2.2 and 5.1
 
+Also add 24h format on Android (fork from https://github.com/dfabreguette-ap/cordova-plugin-datepicker)
+
 # DatePicker Plugin for Cordova/PhoneGap 4.0 (iOS and Android and Windows)
 
 This is a combined version of DatePicker iOS and Android and Windows plugin for Cordova/Phonegap 4.0.
