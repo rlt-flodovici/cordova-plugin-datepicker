@@ -105,18 +105,21 @@ public class DatePickerPlugin extends CordovaPlugin {
 				@Override
 				public void run() {
 					final TimeSetListener timeSetListener = new TimeSetListener(datePickerPlugin, callbackContext);
-					final TimePickerDialog timeDialog = new TimePickerDialog(currentCtx, timeSetListener, mHour,
-							mMinutes, false);
+					//final TimePickerDialog timeDialog = new TimePickerDialog(currentCtx, timeSetListener, mHour,
+					//		mMinutes, false);
+
+					final TimePickerDialog timeDialog = new TimePickerDialog(currentCtx, TimePickerDialog.THEME_DEVICE_DEFAULT_LIGHT, timeSetListener, mHour, mMinutes, true);
+
 					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 						timeDialog.setCancelable(true);
 						timeDialog.setCanceledOnTouchOutside(false);
 						if (!clearButtonText.isEmpty()){
-							
+
 	                        timeDialog.setButton(TimePickerDialog.BUTTON_NEUTRAL, clearButtonText, new DialogInterface.OnClickListener() {
 	                        	@Override
 	                            public void onClick(DialogInterface dialog, int which) {
 	                                // TODO Auto-generated method stub
-	                                callbackContext.success("-1");                                
+	                                callbackContext.success("-1");
 	                            }
 	                        });
                         }
@@ -144,8 +147,11 @@ public class DatePickerPlugin extends CordovaPlugin {
 				@Override
 				public void run() {
 					final DateSetListener dateSetListener = new DateSetListener(datePickerPlugin, callbackContext);
-					final DatePickerDialog dateDialog = new DatePickerDialog(currentCtx, dateSetListener, mYear,
-							mMonth, mDay);
+					//final DatePickerDialog dateDialog = new DatePickerDialog(currentCtx, dateSetListener, mYear,
+					//		mMonth, mDay);
+
+					final DatePickerDialog dateDialog = new DatePickerDialog(currentCtx, DatePickerDialog.THEME_DEVICE_DEFAULT_LIGHT, dateSetListener, mYear, mMonth, mDay);
+
 					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 						DatePicker dp = dateDialog.getDatePicker();
 						if(minDate > 0) {
